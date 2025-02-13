@@ -1,0 +1,38 @@
+# Virtual environments
+.venv/
+venv/
+
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database (if applicable)
+*.sqlite3
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Logs and debug files
+*.log
+logs/
+*.pid
+
+# Migrations cache (optional)
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/__pycache__/
+
+# MacOS system files
+.DS_Store
+
+# JetBrains IDE files
+.idea/
+
+# VS Code settings (optional)
+.vscode/
+
+# Docker-related files
+db_data/
+volumes/
