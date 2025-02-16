@@ -12,5 +12,5 @@ path("", include("pages.urls")),
 path("accounts/", include("django.contrib.auth.urls")),
 # Local apps
 path("accounts/", include("accounts.urls")), # new
-path("", include("pages.urls")),
+ 
 ]

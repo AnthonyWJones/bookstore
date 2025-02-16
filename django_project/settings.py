@@ -9,21 +9,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']  # Replace with specific domains in production
 
+# django_project/settings.py
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig',
-    "pages.apps.PagesConfig", # new
+"django.contrib.admin",
+"django.contrib.auth",
+"django.contrib.contenttypes",
+"django.contrib.sessions",
+"django.contrib.messages",
+"django.contrib.staticfiles",
+# Third-party
+"crispy_forms", # new
+"crispy_bootstrap5", # new
+# Local
+"accounts.apps.AccountsConfig",
+"pages.apps.PagesConfig",
 ]
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'django_project' / 'templates'],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,9 +80,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
+ 
 
+# django_project/settings.py
+STATIC_URL = '/static/' 
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"  # For production use
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -87,3 +97,8 @@ LOGIN_REDIRECT_URL = "home" # new
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
  # new
+
+
+# django-crispy-forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"  # new
+CRISPY_TEMPLATE_PACK = "bootstrap5"  # new
